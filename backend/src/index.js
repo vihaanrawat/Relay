@@ -1,6 +1,7 @@
 import express from "express"
 import "dotenv/config"
-import { connectDb } from "./lib/db";
+import User from "./models/user.model.js"
+import { connectDb } from "./lib/db.js"
 
 const app = express()
 const PORT = process.env.PORT
