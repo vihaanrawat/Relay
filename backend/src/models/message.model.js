@@ -11,6 +11,16 @@ const messageSchema = new mongoose.Schema({
         ref: "User",
         required: true,
     },
+    text:{
+        type:String,
+
+    },
+    image:{
+        type:String,
+    },
+    video:{
+        type:String,
+    },
 
 
 },{timestamps:true})
