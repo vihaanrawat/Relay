@@ -22,11 +22,9 @@ const userSchema = new mongoose.Schema({
         type: String,
         default: ""
     },
-},{timestamps:true},
+},
+{timestamps:true}, //createdAt & updatedAt
 );
-
-createdAt, updatedAt
-
 
 
 const User = mongoose.model("User",userSchema)
