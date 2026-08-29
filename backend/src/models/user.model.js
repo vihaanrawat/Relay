@@ -1,6 +1,13 @@
-import mongoose from "mongoose"
+import mongoose, { mongo } from "mongoose"
 
 const userSchema = new mongoose.Schema({
+
+    clerkId: {
+        type: String,
+        required: true,
+        unique: true
+    },
+
     email: {
         type: String,
         required: true,
@@ -16,3 +23,5 @@ const userSchema = new mongoose.Schema({
         default: ""
     },
 })
+
+const User = mongoose.model("User",userSchema)
