@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build":"rm -rf dist && cp -R src dist",
+    "build": "shx rm -rf dist && shx cp -R src dist",
     "dev": "node --watch src/index.js"
   },
   "keywords": [],
@@ -17,5 +17,8 @@
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "mongoose": "^9.9.4"
+  },
+  "devDependencies": {
+    "shx": "^0.4.0"
   }
 }
