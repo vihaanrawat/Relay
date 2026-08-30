@@ -32,7 +32,7 @@ app.get("/health",(req,res) =>{
 })
 
 if(fs.existsSync(publicDir)){
-    
+    app.use(express.static(publicDir))
 }
 
 app.listen(PORT, () => {
