@@ -31,6 +31,9 @@ app.get("/health",(req,res) =>{
     res.status(200).json({ok:true});
 })
 
+
+//if the public directory exists , serve the static files
+// this is for production build
 if(fs.existsSync(publicDir)){
     app.use(express.static(publicDir))
 
