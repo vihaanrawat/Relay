@@ -9,7 +9,7 @@ function App() {
       <h1>MY APP</h1>
        <header>
         <Show when="signed-out">
-          <SignInButton />
+          <SignInButton mode='modal'/>
           <SignUpButton />
         </Show>
         <Show when="signed-in">
