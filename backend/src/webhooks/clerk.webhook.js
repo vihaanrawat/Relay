@@ -22,9 +22,13 @@ router.post("/", async (req, res) => {
     // throws if the signature is wrong or the body was tampered with; only then do we trust evt.
     const evt = await verifyWebhook(request, { signingSecret });
 
-    if(evt.type==="user.created" || evt.type === "user.updated"){
+    if (evt.type === "user.created" || evt.type === "user.updated") {
         const u = evt.data
-        
+
+        const email =
+            u.email_addresses?.find((e) => e.id === u.primary_email_address_id)?.email_address ??
+            u.email_addresses?.[0]?.email_address;
+
     }
 });
 
