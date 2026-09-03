@@ -40,6 +40,7 @@ app.get("/health",(req,res) =>{
 })
 
 app.use("/api/auth",authRoutes)
+app.use("/api/messages",messageRou)
 
 
 //if the public directory exists , serve the static files
