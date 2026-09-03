@@ -23,4 +23,8 @@ async function uploadChatMedia(file) {
         folder: "/chat",
     });
 
+    return result.url
+
 }
+
+export {uploadChatMedia , hasImageKitConfig}
