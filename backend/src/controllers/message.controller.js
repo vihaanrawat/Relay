@@ -24,7 +24,14 @@ export async function getConversationsForSidebar(req, res) {
             // 1. Keep only the messages I sent or received.
             { $match: { $or: [{ senderId: loggedInUserId }, { receiverId: loggedInUserId }] } },
 
-            
+            // 2. Collapse them into one row per chat partner, noting our latest message time.
+            {
+                $group: {
+                    // The partner is the other person on the message (not me).
+                    _id: { $cond: [{ $eq: ["$senderId", loggedInUserId] }, "$receiverId", "$senderId"] },
+                    lastMessageAt: { $max: "$createdAt" },
+                },
+            },
 
         ]);
     } catch (error) {
