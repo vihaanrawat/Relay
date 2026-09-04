@@ -4,26 +4,27 @@ import Message from "../models/message.model.js"
 export async function getUsersForSidebar(req, res) {
     try {
         const loggedInUserId = req.user._id
-        
-        const filteredUsers = await User.find({_id:{$ne : loggedInUserId}}).select("-clerkId")
+
+        const filteredUsers = await User.find({ _id: { $ne: loggedInUserId } }).select("-clerkId")
 
         res.status(200).json(filteredUsers)
     } catch (error) {
         console.error("Error in getUsersForSidebar:", error.message)
-        res.status(500).json({message : "Internal server error"})
+        res.status(500).json({ message: "Internal server error" })
 
     }
 
 }
 
-export async function getConversationsForSidebar(req,res) {
+export async function getConversationsForSidebar(req, res) {
     try {
         const loggedInUserId = req.user._id
 
         const conversations = await Message.aggregate([
-            
+            // 1. Keep only the messages I sent or received.
+            { $match: { $or: [{ senderId: loggedInUserId }, { receiverId: loggedInUserId }] } },
         ])
     } catch (error) {
-        
+
     }
 }
