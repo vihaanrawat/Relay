@@ -6,4 +6,6 @@ const router = express.Router()
 
 router.get("/users", protectRoute ,getUsersForSidebar)
 
+router.get("/conversations", protectRoute ,getConversationsForSidebar)
+
 export default router
