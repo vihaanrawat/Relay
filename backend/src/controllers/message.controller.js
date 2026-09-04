@@ -45,7 +45,10 @@ export async function getConversationsForSidebar(req, res) {
             { $project: { clerkId: 0 } },
 
         ]);
-    } catch (error) {
 
+        res.status(200).json(conversations)
+    } catch (error) {
+        console.error("Error in getConversationsForSidebar:", error.message)
+        
     }
 }
