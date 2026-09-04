@@ -37,9 +37,12 @@ export async function getConversationsForSidebar(req, res) {
 
             // 4. Look up each partner's user profile (comes back as an array).
             { $lookup: { from: "users", localField: "_id", foreignField: "_id", as: "user" } },
-            
+
             // 5. Pull that profile out of the array and make it the document.
             { $replaceRoot: { newRoot: { $first: "$user" } } },
+
+            // 6. Hide the private clerkId field from the result.
+            { $project: { clerkId: 0 } },
 
         ]);
     } catch (error) {
