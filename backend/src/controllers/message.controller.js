@@ -14,3 +14,11 @@ export async function getUsersForSidebar(req, res) {
     }
 
 }
+
+export async function getConversationsForSidebar(req,res) {
+    try {
+        
+    } catch (error) {
+        
+    }
+}
