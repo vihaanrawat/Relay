@@ -1,4 +1,5 @@
 import User from "../models/user.model.js"
+import Message from "../models/message.model.js"
 
 export async function getUsersForSidebar(req, res) {
     try {
@@ -17,7 +18,7 @@ export async function getUsersForSidebar(req, res) {
 
 export async function getConversationsForSidebar(req,res) {
     try {
-        
+        const loggedInUserId = req.user._id
     } catch (error) {
         
     }
