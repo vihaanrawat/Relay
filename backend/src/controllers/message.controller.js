@@ -19,6 +19,10 @@ export async function getUsersForSidebar(req, res) {
 export async function getConversationsForSidebar(req,res) {
     try {
         const loggedInUserId = req.user._id
+
+        const conversations = await Message.aggregate([
+            
+        ])
     } catch (error) {
         
     }
