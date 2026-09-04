@@ -23,7 +23,10 @@ export async function getConversationsForSidebar(req, res) {
         const conversations = await Message.aggregate([
             // 1. Keep only the messages I sent or received.
             { $match: { $or: [{ senderId: loggedInUserId }, { receiverId: loggedInUserId }] } },
-        ])
+
+            
+
+        ]);
     } catch (error) {
 
     }
