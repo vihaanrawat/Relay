@@ -32,6 +32,14 @@ export async function getConversationsForSidebar(req, res) {
                     lastMessageAt: { $max: "$createdAt" },
                 },
             },
+            // 3. Put the most recent conversation at the top.
+            { $sort: { lastMessageAt: -1 } },
+
+            // 4. Look up each partner's user profile (comes back as an array).
+            { $lookup: { from: "users", localField: "_id", foreignField: "_id", as: "user" } },
+            
+            // 5. Pull that profile out of the array and make it the document.
+            { $replaceRoot: { newRoot: { $first: "$user" } } },
 
         ]);
     } catch (error) {
