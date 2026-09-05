@@ -56,6 +56,7 @@ export async function getConversationsForSidebar(req, res) {
 export async function getMessages(req,res) {
     try {
         const {id : userToChatId} = req.params
+        const myId = req.user._id
     } catch (error) {
         
     }
