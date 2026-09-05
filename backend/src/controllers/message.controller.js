@@ -66,8 +66,10 @@ export async function getMessages(req, res) {
             ]
         }).sort({createdAt:1})
 
-        res.status
+        res.status(200).json(messages)
     } catch (error) {
+        console.error("Error in getMessages:", error.message)
+        res.status(500).json({message:"Internal server error"})
 
     }
 }
