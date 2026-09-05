@@ -9,10 +9,12 @@ import { protectRoute } from "../middleware/auth.middleware.js";
 
 const router = express.Router()
 
-router.get("/users", protectRoute ,getUsersForSidebar)
-router.get("/conversations", protectRoute ,getConversationsForSidebar)
-router.get("/:id",protectRoute,getMessages)
-router.post("/send/:id",protectRoute,getMessages)
+router.use(protectRoute)
+
+router.get("/users",getUsersForSidebar)
+router.get("/conversations" ,getConversationsForSidebar)
+router.get("/:id",getMessages)
+router.post("/send/:id",upload,sendMessage)
 
 
 
