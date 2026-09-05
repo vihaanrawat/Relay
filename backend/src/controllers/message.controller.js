@@ -1,5 +1,6 @@
 import User from "../models/user.model.js"
 import Message from "../models/message.model.js"
+import { uploadChatMedia } from "../lib/imagekit.js"
 
 export async function getUsersForSidebar(req, res) {
     try {
@@ -83,7 +84,15 @@ export async function sendMessage(req, res) {
         let imageUrl;
         let videoUrl;
 
-        
+        if(req.file){
+            if(!hasImageKitConfig()){
+                return res.status(500).json({message:"Media upload is not configured"})
+            }
+
+            const url = await uploadChatMedia(req.file)
+        }
+
+
     } catch (error) {
 
     }
