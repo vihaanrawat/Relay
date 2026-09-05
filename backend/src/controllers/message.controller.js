@@ -53,11 +53,21 @@ export async function getConversationsForSidebar(req, res) {
     }
 }
 
-export async function getMessages(req,res) {
+export async function getMessages(req, res) {
     try {
-        const {id : userToChatId} = req.params
+        const { id: userToChatId } = req.params
         const myId = req.user._id
+
+        const messages = await Message.find({
+            $or: [
+                { senderId: myId, recieverId: userToChatId },
+                { senderId: userToChatId , recieverId: myId },
+
+            ]
+        }).sort({createdAt:1})
+
+        res.status
     } catch (error) {
-        
+
     }
 }
