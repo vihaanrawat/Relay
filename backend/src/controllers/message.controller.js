@@ -96,6 +96,10 @@ export async function sendMessage(req, res) {
             }
         }
 
+        const newMessage = new Message({
+            
+        })
+
 
     } catch (error) {
 
