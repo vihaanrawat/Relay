@@ -90,6 +90,10 @@ export async function sendMessage(req, res) {
             }
 
             const url = await uploadChatMedia(req.file)
+            if(req.file.mimetype.startsWith("video/")) videoUrl = url;
+            else{
+                imageUrl = url
+            }
         }
 
 
