@@ -61,24 +61,25 @@ export async function getMessages(req, res) {
         const messages = await Message.find({
             $or: [
                 { senderId: myId, recieverId: userToChatId },
-                { senderId: userToChatId , recieverId: myId },
+                { senderId: userToChatId, recieverId: myId },
 
             ]
-        }).sort({createdAt:1})
+        }).sort({ createdAt: 1 })
 
         res.status(200).json(messages)
     } catch (error) {
         console.error("Error in getMessages:", error.message)
-        res.status(500).json({message:"Internal server error"})
+        res.status(500).json({ message: "Internal server error" })
 
     }
 }
 
-export async function sendMessage(req,res) {
+export async function sendMessage(req, res) {
     try {
-        
+        const { text } = req.body
+        const { id: receiverId } = req.params
     } catch (error) {
-        
+
     }
-    
+
 }
