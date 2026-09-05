@@ -84,23 +84,31 @@ export async function sendMessage(req, res) {
         let imageUrl;
         let videoUrl;
 
-        if(req.file){
-            if(!hasImageKitConfig()){
-                return res.status(500).json({message:"Media upload is not configured"})
+        if (req.file) {
+            if (!hasImageKitConfig()) {
+                return res.status(500).json({ message: "Media upload is not configured" })
             }
 
             const url = await uploadChatMedia(req.file)
-            if(req.file.mimetype.startsWith("video/")) videoUrl = url;
-            else{
+            if (req.file.mimetype.startsWith("video/")) videoUrl = url;
+            else {
                 imageUrl = url
             }
         }
 
         const newMessage = new Message({
-            
+            senderId,
+            receiverId,
+            text,
+            image: imageUrl,
+            video: videoUrl,
         })
 
+        await newMessage.save()
 
+        //todo: realtime with socket.io
+
+        res.status(201).json(newMessage)
     } catch (error) {
 
     }
