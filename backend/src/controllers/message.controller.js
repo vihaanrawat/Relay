@@ -109,8 +109,9 @@ export async function sendMessage(req, res) {
 
         //realtime with socket.io
 
-        const receiverSocketId = getReceiverSocketId()
+        const receiverSocketId = getReceiverSocketId(receiverId)
 
+        
 
 
         res.status(201).json(newMessage)
