@@ -20,4 +20,9 @@ io.on("connection", (socket) => {
 
     //io.emit() sends event to everyone - broadcast
     io.emit("getOnlineUsers", Object.keys(userSocketMap))
+
+    //socket.on is used to listen for events
+    socket.on("disconnect", () =>{
+        
+    })
 })
