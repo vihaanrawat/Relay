@@ -34,4 +34,4 @@ io.on("connection", (socket) => { // connection -> special event
     })
 })
 
-export {app}
+export {app, server , io , getReceiverSocketId};
