@@ -24,6 +24,8 @@ io.on("connection", (socket) => { // connection -> special event
     //socket.on is used to listen for events
     socket.on("disconnect", () =>{ //disconnect -> special event
         
+        if(userId) delete userSocketMap[userId]
+        io.emit("getOnlineUsers" , Object.keys(userSocketMap))
 
     })
 })
