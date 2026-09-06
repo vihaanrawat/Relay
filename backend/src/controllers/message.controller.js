@@ -1,6 +1,7 @@
 import User from "../models/user.model.js"
 import Message from "../models/message.model.js"
 import { uploadChatMedia } from "../lib/imagekit.js"
+import { getReceiverSocketId } from "../lib/socket.js"
 
 export async function getUsersForSidebar(req, res) {
     try {
@@ -106,7 +107,11 @@ export async function sendMessage(req, res) {
 
         await newMessage.save()
 
-        //todo: realtime with socket.io
+        //realtime with socket.io
+
+        const receiverSocketId = getReceiverSocketId()
+
+
 
         res.status(201).json(newMessage)
     } catch (error) {
