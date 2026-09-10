@@ -1,4 +1,6 @@
 import { Show, SignInButton, SignUpButton, UserButton } from '@clerk/react'
+import { Button } from '@heroui/react';
+
 
 
 function App() {
@@ -6,9 +8,12 @@ function App() {
   return (
     <div>
       <h1 className='text-4xl text-red-500 bg-blue-400'>MY APP</h1>
-       <header>
+      <Button>
+        My Button
+      </Button>
+      <header>
         <Show when="signed-out">
-          <SignInButton mode='modal'/>
+          <SignInButton mode='modal' />
           <SignUpButton mode='modal' />
         </Show>
         <Show when="signed-in">
