@@ -1,7 +1,6 @@
 import { Show, SignInButton, SignUpButton, UserButton } from '@clerk/react'
 import { Button } from '@heroui/react';
 
-
 function App() {
 
   return (
@@ -22,6 +21,5 @@ function App() {
     </div>
   )
 }
-
 
 export default App
