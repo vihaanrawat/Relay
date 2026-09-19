@@ -1,10 +1,12 @@
 import { Show, SignInButton, SignUpButton, UserButton } from '@clerk/react'
 import { Button } from '@heroui/react';
+import {WallpaperProvider} from "./context/WallpaperContext"
 
 function App() {
 
   return (
-    <div>
+    <ThemeProvider>
+    <WallpaperProvider>
       <h1 className='text-4xl text-red-500 bg-blue-400'>MY APP</h1>
       <Button>
         My Button
@@ -18,7 +20,8 @@ function App() {
           <UserButton />
         </Show>
       </header>
-    </div>
+    </WallpaperProvider>
+    </ThemeProvider>
   )
 }
 
