@@ -3,9 +3,14 @@ import { ThemeProvider } from "./context/ThemeContext"
 import { Route, Routes } from 'react-router';
 import ChatPage from './pages/ChatPage';
 import AuthPage from "./pages/AuthPage";
+import { useAuth } from '@clerk/react'
+
 
 
 function App() {
+
+  const { isSignedIn , isLoaded } = useAuth()
+
 
   return (
     <ThemeProvider>
