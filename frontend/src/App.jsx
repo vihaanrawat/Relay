@@ -11,6 +11,9 @@ function App() {
 
   const { isSignedIn , isLoaded } = useAuth()
 
+  //todo: make this better component
+  if(!isLoaded) return <p>Loading...</p>
+
 
   return (
     <ThemeProvider>
@@ -19,7 +22,7 @@ function App() {
         <Routes>
 
           <Route path='/' element={isSignedIn ? <ChatPage /> : <Navigate to={"/auth"} replace />} />
-          
+
           <Route path='/auth' element={!isSignedIn ? <AuthPage/> : <Navigate to={"/"} replace />} />
 
         </Routes>
