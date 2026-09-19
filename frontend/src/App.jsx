@@ -19,7 +19,8 @@ function App() {
         <Routes>
 
           <Route path='/' element={isSignedIn ? <ChatPage /> : <Navigate to={"/auth"} replace />} />
-          <Route path='/auth' element={<AuthPage/>} />
+          
+          <Route path='/auth' element={!isSignedIn ? <AuthPage/> : <Navigate to={"/"} replace />} />
 
         </Routes>
 
