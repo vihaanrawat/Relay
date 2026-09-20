@@ -17,7 +17,6 @@ function AuthPage() {
 
         </main>
 
-
       </div>
 
     </div>
