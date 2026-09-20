@@ -1,4 +1,7 @@
 import { APP_NAME, AppLogo } from "../AppLogo"
+import {ThemePresetPicker} from "../ThemePresetPicker"
+import {ThemeToggle} from "../ThemeToggle"
+import {WallpaperPicker} from "../WallpaperPicker"
 
 function AuthHeader() {
 
