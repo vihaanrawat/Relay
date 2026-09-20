@@ -1,3 +1,7 @@
+import AuthActionPanel from "../components/auth/AuthActionPanel"
+import AuthHeader from "../components/auth/AuthHeader"
+import AuthHeroPanel from "../components/auth/AuthHeroPanel"
+
 function AuthPage() {
 
   return (
