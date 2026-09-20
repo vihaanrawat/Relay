@@ -14,6 +14,10 @@ function AuthHeader() {
         </div>
       </div>
 
+      <div>
+        
+      </div>
+
     </header>
 
   )
