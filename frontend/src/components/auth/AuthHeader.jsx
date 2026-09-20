@@ -1,10 +1,10 @@
-import React from 'react'
-
 function AuthHeader() {
+  
   return (
-    <div>
-      
-    </div>
+    <header>
+
+    </header>
+    
   )
 }
 
