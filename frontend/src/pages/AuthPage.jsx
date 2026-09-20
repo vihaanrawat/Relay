@@ -1,8 +1,11 @@
 import AuthActionPanel from "../components/auth/AuthActionPanel"
 import AuthHeader from "../components/auth/AuthHeader"
 import AuthHeroPanel from "../components/auth/AuthHeroPanel"
+import { useWallpaper } from "../context/wallpaper"
 
 function AuthPage() {
+
+  const {frameStyle} = useWallpaper()
 
   return (
     <div className="box-border flex min-h-dvh flex-col p-3 sm:p-5 md:p-8">
