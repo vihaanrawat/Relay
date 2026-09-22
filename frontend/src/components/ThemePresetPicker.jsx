@@ -6,5 +6,4 @@ function ThemePresetPicker() {
     </div>
   )
 }
-
 export default ThemePresetPicker
