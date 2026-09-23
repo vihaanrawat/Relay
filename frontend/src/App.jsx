@@ -11,7 +11,6 @@ function App() {
 
   const { isSignedIn , isLoaded } = useAuth()
 
-  //todo: make this better component
   if(!isLoaded) return <PageLoader/>
 
   return (
