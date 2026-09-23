@@ -28,7 +28,7 @@ export function AuthHeroPanel() {
           <h2 className="text-balance font-mono text-[1.15rem] font-semibold uppercase leading-snug tracking-[0.06em] text-zinc-900 dark:text-white sm:text-[1.25rem]">
             Open {APP_NAME}
           </h2>
-          <p className="mx-auto mt-2.5 max-w-[22rem] text-pretty font-mono text-[11px] font-medium leading-relaxed tracking-wide text-zinc-600 dark:text-[#98989D] md:mx-0 md:max-w-none">
+          <p className="mx-auto mt-2.5 max-w-88 text-pretty font-mono text-[11px] font-medium leading-relaxed tracking-wide text-zinc-600 dark:text-[#98989D] md:mx-0 md:max-w-none">
             Chats, photos, and reactions stay in sync—sign in on the right to continue.
           </p>
         </div>
