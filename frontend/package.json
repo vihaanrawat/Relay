@@ -21,7 +21,8 @@
     "react-dom": "^19.2.8",
     "react-router": "^8.4.0",
     "socket.io-client": "^4.8.3",
-    "tailwindcss": "^4.3.3"
+    "tailwindcss": "^4.3.3",
+    "zustand": "^5.0.15"
   },
   "devDependencies": {
     "@babel/core": "^7.29.7",
