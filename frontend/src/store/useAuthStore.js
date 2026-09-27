@@ -7,6 +7,11 @@ export const useAuthStore = create((set,get) => ({
     socket: null,
 
     checkAuth: async () =>{
-        
+        set({isCheckingAuth:true});
+        try {
+            
+        } catch (error) {
+            
+        }
     }
 }))
