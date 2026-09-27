@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import { axiosInstance } from '../lib/axios';
-import {io} from "socket.io-client"
+import {connect, io} from "socket.io-client"
 
 const BASE_URL = import.meta.env.MODE === "development" ? "http://localhost:3000": "/";
 
@@ -28,5 +28,8 @@ export const useAuthStore = create((set, get) => ({
             isCheckingAuth: false,
             onlineUsers: []
         });
+    },
+    connectSocket: (user) => {
+        if(!user || get().socket) return
     }
 }))
