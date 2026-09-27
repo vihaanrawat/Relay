@@ -25,7 +25,7 @@ function App() {
     if (isSignedIn) checkAuth();
     else clearAuth()
 
-  }, [])
+  }, [checkAuth,clearAuth,isLoaded,isSignedIn])
 
 
 
