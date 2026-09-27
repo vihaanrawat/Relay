@@ -1,5 +1,6 @@
 import { create } from 'zustand'
 import { axiosInstance } from '../lib/axios';
+import {io} from "socket.io-client"
 
 export const useAuthStore = create((set, get) => ({
     authUser: null,
