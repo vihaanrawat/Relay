@@ -5,11 +5,17 @@ import ChatPage from './pages/ChatPage';
 import AuthPage from "./pages/AuthPage";
 import { useAuth } from '@clerk/react'
 import PageLoader from "./components/PageLoader";
+import { useAuthStore } from "./store/useAuthStore";
 
 
 function App() {
-
   const { isSignedIn , isLoaded } = useAuth()
+
+  //option 1 : 
+  // const {checkAuth , isCheckingAuth , clearAuth} = useAuthStore();
+
+  //option 2 : better for performance
+  
 
   if(!isLoaded) return <PageLoader/>
 
