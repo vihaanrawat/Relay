@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { axiosInstance } from '../lib/axios';
 
 export const useAuthStore = create((set,get) => ({
     authUser: null,
@@ -10,6 +11,7 @@ export const useAuthStore = create((set,get) => ({
         set({isCheckingAuth:true});
         try {
             const res = await axiosInstance.get("/auth/check")
+            set({authUser:res.data})
         } catch (error) {
             
         }
