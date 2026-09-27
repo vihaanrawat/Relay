@@ -9,15 +9,22 @@ import { useAuthStore } from "./store/useAuthStore";
 
 
 function App() {
-  const { isSignedIn , isLoaded } = useAuth()
+  const { isSignedIn, isLoaded } = useAuth()
 
   //option 1 : 
   // const {checkAuth , isCheckingAuth , clearAuth} = useAuthStore();
 
   //option 2 : better for performance
-  
+  const clearAuth = useAuthStore((state) => state.clearAuth);
+  const checkAuth = useAuthStore((state) => state.checkAuth);
+  const isCheckingAuth = useAuthStore((state) => state.isCheckingAuth);
 
-  if(!isLoaded) return <PageLoader/>
+
+
+
+
+
+  if (!isLoaded) return <PageLoader />
 
   return (
     <ThemeProvider>
@@ -27,7 +34,7 @@ function App() {
 
           <Route path='/' element={isSignedIn ? <ChatPage /> : <Navigate to={"/auth"} replace />} />
 
-          <Route path='/auth' element={!isSignedIn ? <AuthPage/> : <Navigate to={"/"} replace />} />
+          <Route path='/auth' element={!isSignedIn ? <AuthPage /> : <Navigate to={"/"} replace />} />
 
         </Routes>
 
