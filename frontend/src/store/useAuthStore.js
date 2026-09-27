@@ -30,6 +30,8 @@ export const useAuthStore = create((set, get) => ({
         });
     },
     connectSocket: (user) => {
-        if(!user || get().socket) return
+        if(!user || get().socket?.connected) return
+
+        
     }
 }))
