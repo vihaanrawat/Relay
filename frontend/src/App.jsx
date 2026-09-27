@@ -6,6 +6,7 @@ import AuthPage from "./pages/AuthPage";
 import { useAuth } from '@clerk/react'
 import PageLoader from "./components/PageLoader";
 import { useAuthStore } from "./store/useAuthStore";
+import { useEffect } from "react";
 
 
 function App() {
@@ -19,8 +20,11 @@ function App() {
   const checkAuth = useAuthStore((state) => state.checkAuth);
   const isCheckingAuth = useAuthStore((state) => state.isCheckingAuth);
 
+  useEffect(() => {
+    if (!isLoaded) return
 
 
+  }, [])
 
 
 
