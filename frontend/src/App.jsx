@@ -27,6 +27,8 @@ function App() {
 
   }, [checkAuth,clearAuth,isLoaded,isSignedIn])
 
+  if(!isLoaded || (isSignedIn && isCheckingAuth)) return <PageLoader/>;
+
 
 
   if (!isLoaded) return <PageLoader />
