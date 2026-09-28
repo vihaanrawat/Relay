@@ -5,5 +5,7 @@ import { useAuthStore } from "./useAuthStore"
 export const useChatStore = create((set,get) => ({
     users:[],
     conversations: [],
+    messages: [],
+    selectedUser : null,
     
 }))
