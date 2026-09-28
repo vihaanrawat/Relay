@@ -10,5 +10,5 @@ export const useChatStore = create((set,get) => ({
     isConversationsloading: false,
     isUsersLoading: false,
     isMessagesLoading:false,
-    active
+    activeConversationsId:null,
 }))
