@@ -68,15 +68,33 @@ export const useChatStore = create((set, get) => ({
         if (!selectedUser) return false;
 
         try {
-          const res = await axiosInstance.post(`/messages/send/${selectedUser._id}`, messageData);
-          set({ messages: [...messages, res.data], composerText: "" });
-          get().getConversations();
-          return true;
+            const res = await axiosInstance.post(`/messages/send/${selectedUser._id}`, messageData);
+            set({ messages: [...messages, res.data], composerText: "" });
+            get().getConversations();
+            return true;
         } catch (error) {
-          toast.error(error.response?.data?.message || "Failed to send message");
-          return false;
+            toast.error(error.response?.data?.message || "Failed to send message");
+            return false;
         }
-      },
+    },
+
+
+    subscribeToMessages: (userId) => {
+        if (!userId) return;
+
+        const socket = useAuthStore.getState().socket;
+        if (!socket) return;
+
+        socket.off("newMessage");
+        socket.on("newMessage", (newMessage) => {
+            // if im not the receiver don't do anything just return
+            if (String(newMessage.senderId) !== String(userId)) return;
+
+            set({ messages: [...get().messages, newMessage] });
+
+            get().getConversations();
+        });
+    },
 
 
 }))
