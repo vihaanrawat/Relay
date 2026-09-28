@@ -15,4 +15,6 @@ export const useChatStore = create((set,get) => ({
     sidebarTab:"chats",
     composerText: "",
     isSoundEnables: true,
+
+    
 }))
