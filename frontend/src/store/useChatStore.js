@@ -7,5 +7,6 @@ export const useChatStore = create((set,get) => ({
     conversations: [],
     messages: [],
     selectedUser : null,
-    
+    isConversationsloading: false,
+    isUsersLoading: false,
 }))
