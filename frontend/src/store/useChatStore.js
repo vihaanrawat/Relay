@@ -34,20 +34,33 @@ export const useChatStore = create((set, get) => ({
             set({ isUsersLoading: false });
         }
     },
-
     
-      getMessages: async (userId) => {
+
+    getConversations: async () => {
+        set({ isConversationsLoading: true });
+        try {
+            const res = await axiosInstance.get("/messages/conversations");
+            set({ conversations: res.data });
+        } catch (error) {
+            console.log("Error in getConversations", error.message);
+        } finally {
+            set({ isConversationsLoading: false });
+        }
+    },
+
+
+    getMessages: async (userId) => {
         if (!userId) return;
         set({ isMessagesLoading: true });
         try {
-          const res = await axiosInstance.get(`/messages/${userId}`);
-          set({ messages: res.data });
+            const res = await axiosInstance.get(`/messages/${userId}`);
+            set({ messages: res.data });
         } catch (error) {
-          toast.error(error.response?.data?.message || "Failed to load messages");
+            toast.error(error.response?.data?.message || "Failed to load messages");
         } finally {
-          set({ isMessagesLoading: false });
+            set({ isMessagesLoading: false });
         }
-      },
+    },
 
-      
+
 }))
