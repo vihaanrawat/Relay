@@ -15,7 +15,7 @@ export const useChatStore = create((set, get) => ({
     sidebarTab: "chats",
     composerText: "",
     isSoundEnables: true,
-    
+
 
     getUsers: async () => {
         set({ isUsersLoading: true });
@@ -34,4 +34,20 @@ export const useChatStore = create((set, get) => ({
             set({ isUsersLoading: false });
         }
     },
+
+    
+      getMessages: async (userId) => {
+        if (!userId) return;
+        set({ isMessagesLoading: true });
+        try {
+          const res = await axiosInstance.get(`/messages/${userId}`);
+          set({ messages: res.data });
+        } catch (error) {
+          toast.error(error.response?.data?.message || "Failed to load messages");
+        } finally {
+          set({ isMessagesLoading: false });
+        }
+      },
+
+      
 }))
