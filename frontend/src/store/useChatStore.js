@@ -11,4 +11,8 @@ export const useChatStore = create((set,get) => ({
     isUsersLoading: false,
     isMessagesLoading:false,
     activeConversationsId:null,
+    searchQuery:"",
+    sidebarTab:"chats",
+    composerText: "",
+    isSoundEnables: true,
 }))
