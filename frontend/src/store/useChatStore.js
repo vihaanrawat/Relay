@@ -96,5 +96,10 @@ export const useChatStore = create((set, get) => ({
         });
     },
 
+    unsubscribeFromMessages: () => {
+        const socket = useAuthStore.getState().socket;
+        socket?.off("newMessage");
+    },
+
 
 }))
