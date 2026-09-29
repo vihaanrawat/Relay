@@ -17,6 +17,5 @@ router.get("/users", getUsersForSidebar)
 router.get("/conversations", getConversationsForSidebar)
 router.get("/:id", getMessages)
 router.post("/send/:id", upload.single("media"), sendMessage)
-//todo : show this in frontend
 
 export default router
