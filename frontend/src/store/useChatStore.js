@@ -130,7 +130,19 @@ export const useChatStore = create((set, get) => ({
         return get().sendMessage({ text: messageText });
     },
 
-    
+    sendMediaMessage: async ({ conversationId, file }) => {
+        if (!conversationId || !file) return false;
+
+        const formData = new FormData();
+        formData.append("media", file);
+
+        set({ isSendingMedia: true });
+        try {
+            return await get().sendMessage(formData);
+        } finally {
+            set({ isSendingMedia: false });
+        }
+    },
 
 
 }))
