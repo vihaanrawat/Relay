@@ -123,4 +123,12 @@ export const useChatStore = create((set, get) => ({
     setSoundEnabled: (isSoundEnabled) => set({ isSoundEnabled }),
 
 
+    sendTextMessage: async (conversationId) => {
+        const messageText = get().composerText.trim();
+        if (!conversationId || !messageText) return false;
+
+        return get().sendMessage({ text: messageText });
+    },
+
+
 }))
