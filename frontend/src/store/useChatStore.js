@@ -116,4 +116,11 @@ export const useChatStore = create((set, get) => ({
     },
 
 
+
+    setSearchQuery: (searchQuery) => set({ searchQuery }),
+    setSidebarTab: (sidebarTab) => set({ sidebarTab }),
+    setComposerText: (composerText) => set({ composerText }),
+    setSoundEnabled: (isSoundEnabled) => set({ isSoundEnabled }),
+
+
 }))
