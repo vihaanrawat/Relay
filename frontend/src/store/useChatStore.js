@@ -130,5 +130,7 @@ export const useChatStore = create((set, get) => ({
         return get().sendMessage({ text: messageText });
     },
 
+    
+
 
 }))
