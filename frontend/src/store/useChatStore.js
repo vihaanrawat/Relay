@@ -3,6 +3,8 @@ import { axiosInstance } from "../lib/axios"
 import { useAuthStore } from "./useAuthStore"
 import toast from "react-hot-toast"
 
+
+//todo : persist
 export const useChatStore = create((set, get) => ({
     users: [],
     conversations: [],
