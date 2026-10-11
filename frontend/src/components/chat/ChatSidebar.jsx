@@ -1,4 +1,5 @@
 import { getInitials } from "../../hooks/useSelectedConversation";
+import { useChatStore } from "../../store/useChatStore";
 
 function mapUserForList(user, onlineUsers) {
   return {
@@ -55,7 +56,6 @@ function ChatSidebar() {
 
   return (
     <aside>
-      
     </aside>
   )
 }
