@@ -1,3 +1,5 @@
+import { getInitials } from "../../hooks/useSelectedConversation";
+
 function mapUserForList(user, onlineUsers) {
   return {
     conversationId: user._id,
