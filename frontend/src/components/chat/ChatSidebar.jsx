@@ -34,6 +34,14 @@ function ChatSidebar() {
 
   const onlineUsers = useAuthStore((state) => state.onlineUsers);
 
+  const { activeConversationId, isLargeScreen } = useSelectedConversation();
+
+  const normalizedSearchQuery = searchQuery.trim().toLowerCase();
+
+  const conversationUsers = conversations.map((user) => mapUserForList(user, onlineUsers));
+  
+  const allUsers = users.map((user) => mapUserForList(user, onlineUsers));
+
   return (
     <div></div>
   )
