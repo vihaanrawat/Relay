@@ -1,4 +1,5 @@
 import { getInitials } from "../../hooks/useSelectedConversation";
+import { useAuthStore } from "../../store/useAuthStore";
 import { useChatStore } from "../../store/useChatStore";
 
 function mapUserForList(user, onlineUsers) {
