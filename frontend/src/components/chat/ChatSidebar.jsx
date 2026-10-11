@@ -18,9 +18,24 @@ function mapUserForList(user, onlineUsers) {
 }
 
 function ChatSidebar() {
+
+  const conversations = useChatStore((state) => state.conversations);
+
+  console.log(conversations);
+  const users = useChatStore((state) => state.users);
+
+  const searchQuery = useChatStore((state) => state.searchQuery);
+  const setSearchQuery = useChatStore((state) => state.setSearchQuery);
+
+  const sidebarTab = useChatStore((state) => state.sidebarTab);
+  const setSidebarTab = useChatStore((state) => state.setSidebarTab);
+
+  const setActiveConversationId = useChatStore((state) => state.setActiveConversationId);
+
+  const onlineUsers = useAuthStore((state) => state.onlineUsers);
+
   return (
-    <div>
-    </div>
+    <div></div>
   )
 }
 
