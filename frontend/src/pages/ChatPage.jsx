@@ -2,6 +2,8 @@ import { useWallpaper } from "../context/wallpaper"
 import { useChatStore } from "../store/useChatStore";
 import { useSelectedConversation } from "../hooks/useSelectedConversation";
 import { useEffect } from "react";
+import ChatSidebar from "../components/chat/ChatSidebar";
+
 
 function ChatPage() {
   const { frameStyle } = useWallpaper();
