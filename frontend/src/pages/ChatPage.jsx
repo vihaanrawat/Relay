@@ -1,5 +1,9 @@
-function ChatPage() {
+import {useWallpaper} from "../context/wallpaper"
 
+
+
+function ChatPage() {
+  const {frameStyle} = useWallpaper();
   return (
     <div>
       ChatPage
