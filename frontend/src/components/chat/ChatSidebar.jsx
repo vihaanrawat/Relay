@@ -60,7 +60,11 @@ function ChatSidebar() {
         !isLargeScreen && activeConversationId ? "hidden lg:flex" : "flex"
       }`}>
 
-        <div className="">
+        <div className="shrink-0 border-b border-border px-2 pb-2 pt-2.5 sm:px-3 sm:pt-3">
+          <div className="flex items-center gap-2 px-0.5 sm:gap-2.5 sm:px-1">
+
+            
+          </div>
 
         </div>
     </aside>
