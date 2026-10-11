@@ -21,6 +21,17 @@ function ChatPage() {
   }, [getConversations, getUsers]);
 
 
+  useEffect(() => {
+    if (!activeConversationId) return;
+
+    getMessages(activeConversationId);
+    subscribeToMessages(activeConversationId);
+
+    // cleanup
+    return () => unsubscribeFromMessages();
+  }, [getMessages, activeConversationId, subscribeToMessages, unsubscribeFromMessages]);
+
+
 
 
   return (
