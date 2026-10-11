@@ -43,7 +43,6 @@ function mapUserToConversation({ user, messages, authUser, onlineUsers }) {
 }
 
 
-
 export function useSelectedConversation() {
   const activeConversationId = useChatStore((state) => state.activeConversationId);
   const conversations = useChatStore((state) => state.conversations);
