@@ -56,7 +56,13 @@ function ChatSidebar() {
     : allUsers;
 
   return (
-    <aside>
+    <aside className={`w-full shrink-0 flex-col overflow-hidden border-r border-border lg:w-72 ${
+        !isLargeScreen && activeConversationId ? "hidden lg:flex" : "flex"
+      }`}>
+
+        <div className="">
+
+        </div>
     </aside>
   )
 }
