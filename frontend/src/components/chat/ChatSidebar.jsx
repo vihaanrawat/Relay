@@ -1,6 +1,7 @@
 import { getInitials } from "../../hooks/useSelectedConversation";
 import { useAuthStore } from "../../store/useAuthStore";
 import { useChatStore } from "../../store/useChatStore";
+import {APP_NAME, AppLogo} from "../AppLogo"
 
 function mapUserForList(user, onlineUsers) {
   return {
@@ -64,7 +65,7 @@ function ChatSidebar() {
 
           <Applogo size={32} className="size-8 shrink-0 rounded-[9px] sm:size-8.5" alt="" />
 
-          
+
         </div>
 
       </div>
