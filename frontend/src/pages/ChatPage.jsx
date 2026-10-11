@@ -37,7 +37,7 @@ function ChatPage() {
 
       <div className="mx-auto flex w-full max-w-6xl flex-1 overflow-hidden rounded-2xl border border-border bg-background text-foreground">
 
-        
+        <ChatSidebar/>
 
       </div>
 
