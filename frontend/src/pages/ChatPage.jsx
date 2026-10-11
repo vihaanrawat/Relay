@@ -32,11 +32,9 @@ function ChatPage() {
   }, [getMessages, activeConversationId, subscribeToMessages, unsubscribeFromMessages]);
 
 
-
-
   return (
     <div>
-      ChatPage
+      
     </div>
   )
 }
