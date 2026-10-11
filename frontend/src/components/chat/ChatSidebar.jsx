@@ -56,17 +56,18 @@ function ChatSidebar() {
     : allUsers;
 
   return (
-    <aside className={`w-full shrink-0 flex-col overflow-hidden border-r border-border lg:w-72 ${
-        !isLargeScreen && activeConversationId ? "hidden lg:flex" : "flex"
+    <aside className={`w-full shrink-0 flex-col overflow-hidden border-r border-border lg:w-72 ${!isLargeScreen && activeConversationId ? "hidden lg:flex" : "flex"
       }`}>
 
-        <div className="shrink-0 border-b border-border px-2 pb-2 pt-2.5 sm:px-3 sm:pt-3">
-          <div className="flex items-center gap-2 px-0.5 sm:gap-2.5 sm:px-1">
+      <div className="shrink-0 border-b border-border px-2 pb-2 pt-2.5 sm:px-3 sm:pt-3">
+        <div className="flex items-center gap-2 px-0.5 sm:gap-2.5 sm:px-1">
 
-            
-          </div>
+          <Applogo size={32} className="size-8 shrink-0 rounded-[9px] sm:size-8.5" alt="" />
 
+          
         </div>
+
+      </div>
     </aside>
   )
 }
