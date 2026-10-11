@@ -39,8 +39,10 @@ function ChatSidebar() {
   const normalizedSearchQuery = searchQuery.trim().toLowerCase();
 
   const conversationUsers = conversations.map((user) => mapUserForList(user, onlineUsers));
-  
+
   const allUsers = users.map((user) => mapUserForList(user, onlineUsers));
+
+  
 
   return (
     <div></div>
