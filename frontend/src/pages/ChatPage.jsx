@@ -33,8 +33,12 @@ function ChatPage() {
 
 
   return (
-    <div>
+    <div className="flex h-dvh flex-col overflow-hidden p-2 sm:p-3 md:p-8" style={frameStyle}>
       
+      <div>
+        
+      </div>
+
     </div>
   )
 }
