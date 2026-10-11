@@ -39,7 +39,14 @@ function ChatPage() {
 
       <div className="mx-auto flex w-full max-w-6xl flex-1 overflow-hidden rounded-2xl border border-border bg-background text-foreground">
 
-        <ChatSidebar/>
+        <ChatSidebar />
+
+        <div className={`flex-1 flex-col overflow-hidden ${!isLargeScreen && !activeConversationId ? "hidden lg:flex" : "flex"
+          }`}>
+            
+            ChatContainer
+
+        </div>
 
       </div>
 
