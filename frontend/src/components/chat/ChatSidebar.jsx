@@ -64,8 +64,7 @@ function ChatSidebar() {
         <div className="flex items-center gap-2 px-0.5 sm:gap-2.5 sm:px-1">
 
           <Applogo size={32} className="size-8 shrink-0 rounded-[9px] sm:size-8.5" alt="" />
-
-
+          
         </div>
 
       </div>
