@@ -2,6 +2,7 @@ import { getInitials } from "../../hooks/useSelectedConversation";
 import { useAuthStore } from "../../store/useAuthStore";
 import { useChatStore } from "../../store/useChatStore";
 import { APP_NAME, AppLogo } from "../AppLogo"
+import {UserButton} from "@clerk/react"
 
 function mapUserForList(user, onlineUsers) {
   return {
@@ -68,7 +69,7 @@ function ChatSidebar() {
              <p className="flex-1 truncate text-lg font-bold tracking-tight sm:text-[22px]">
             {APP_NAME}
           </p>
-          
+
           <UserButton
             appearance={{
               elements: {
