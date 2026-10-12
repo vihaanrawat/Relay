@@ -4,11 +4,6 @@ import { useSelectedConversation } from "../hooks/useSelectedConversation";
 import { useEffect } from "react";
 import ChatSidebar from "../components/chat/ChatSidebar";
 
-import { SearchField,Tabs } from "@heroui/react";
-import {MessageSquareIcon , UsersIcon} from "lucide-react"
-import { ConversationRow } from "../components/chat/ConversationRow";
-
-
 function ChatPage() {
   const { frameStyle } = useWallpaper();
 
