@@ -6,7 +6,8 @@
   "scripts": {
     "build": "shx rm -rf dist && shx cp -R src dist",
     "dev": "node --watch src/index.js",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "db:seed":"node src/seeds/user.seed.js"
   },
   "keywords": [],
   "author": "",
