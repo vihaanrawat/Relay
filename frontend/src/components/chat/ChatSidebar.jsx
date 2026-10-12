@@ -4,6 +4,10 @@ import { useChatStore } from "../../store/useChatStore";
 import { APP_NAME, AppLogo } from "../AppLogo"
 import {UserButton} from "@clerk/react"
 
+import { SearchField, Tabs } from "@heroui/react";
+import { MessageSquareIcon, UsersIcon } from "lucide-react";
+import { ConversationRow } from "./ConversationRow";
+
 function mapUserForList(user, onlineUsers) {
   return {
     conversationId: user._id,
