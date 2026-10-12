@@ -8,7 +8,7 @@ import { SearchField, Tabs } from "@heroui/react";
 import { MessageSquareIcon, UsersIcon } from "lucide-react";
 import { ConversationRow } from "./ConversationRow";
 
-function mapUserForList(user, onlineUsers) {
+function mapUserForList(user, onlineUsers = []) {
   return {
     conversationId: user._id,
     id: user._id,
