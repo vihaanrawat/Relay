@@ -42,9 +42,8 @@ function ChatPage() {
 
         <div className={`flex-1 flex-col overflow-hidden ${!isLargeScreen && !activeConversationId ? "hidden lg:flex" : "flex"
           }`}>
-            
-            ChatContainer
 
+            <ChatHeader/>
         </div>
 
       </div>
