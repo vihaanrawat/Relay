@@ -47,6 +47,8 @@ function ChatPage() {
 
             <ChatHeader/>
             <MessageList/>
+
+            {activeConversation ? <ChatComposer /> : null}
         </div>
 
       </div>
