@@ -45,6 +45,7 @@ function ChatPage() {
           }`}>
 
             <ChatHeader/>
+            <MessageList/>
         </div>
 
       </div>
