@@ -10,7 +10,6 @@ import { ChatComposer } from "../components/chat/ChatComposer";
 function ChatPage() {
   const { frameStyle } = useWallpaper();
 
-
   const getConversations = useChatStore((state) => state.getConversations);
   const getMessages = useChatStore((state) => state.getMessages);
   const getUsers = useChatStore((state) => state.getUsers);
