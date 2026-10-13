@@ -24,7 +24,15 @@ export async function getConversationsForSidebar(req, res) {
 
         const conversations = await Message.aggregate([
             // 1. Keep only the messages I sent or received.
-            { $match: { $or: [{ senderId: loggedInUserId }, { receiverId: loggedInUserId }] } },
+            {
+                $match: {
+                    $or: [
+                        { senderId: loggedInUserId },
+                        { receiverId: loggedInUserId }
+                    ],
+                    receiverId: { $exists: true, $ne: null }
+                }
+            },
 
             // 2. Collapse them into one row per chat partner, noting our latest message time.
             {
@@ -111,7 +119,7 @@ export async function sendMessage(req, res) {
 
         const receiverSocketId = getReceiverSocketId(receiverId)
         //only send the message in realtime if user is online
-        if(receiverSocketId){
+        if (receiverSocketId) {
             io.to(receiverSocketId).emit("newMessage", newMessage)
         }
 
@@ -120,7 +128,7 @@ export async function sendMessage(req, res) {
     } catch (error) {
 
         console.error("Error in sendMessage:", error.message)
-        res.status(500).json({message:"Internal server error"})
+        res.status(500).json({ message: "Internal server error" })
     }
 
 }
