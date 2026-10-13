@@ -99,7 +99,7 @@ export async function sendMessage(req, res) {
 
         const newMessage = new Message({
             senderId,
-            receiverId : receiverId,
+            recieverId : receiverId,
             text,
             image: imageUrl,
             video: videoUrl,
