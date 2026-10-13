@@ -1,4 +1,4 @@
-import { isImageKitUrl , withTransform } from "../../lib/imageKit";
+import { isImageKitUrl , withTransform } from "../../lib/imagekit";
 
 // Chat videos are stored on ImageKit, so we let ImageKit optimize delivery
 // on the fly via URL transformations (compressed + sized for the bubble).
