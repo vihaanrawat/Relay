@@ -3,7 +3,7 @@ import { useChatStore } from "../store/useChatStore";
 import { useSelectedConversation } from "../hooks/useSelectedConversation";
 import { useEffect } from "react";
 import ChatSidebar from "../components/chat/ChatSidebar";
-import 
+import { ChatHeader } from "../components/chat/ChatHeader";
 
 function ChatPage() {
   const { frameStyle } = useWallpaper();
